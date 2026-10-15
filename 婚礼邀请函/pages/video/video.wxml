@@ -1,0 +1,13 @@
+<view class="video-page">
+  <view class="video" wx:for="{{movieList}}" wx:key="title">
+    <view class="video-title">标题：{{item.title}}</view>
+    <view class="video-time">拍摄日期：{{item.createTime}}</view>
+    <video
+      src="{{item.src}}"
+      object-fit="contain"
+      controls
+      show-center-play-btn
+      enable-play-gesture
+    ></video>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="display">
+    <text class="formula">{{formula || ' '}}</text>
+    <text class="value {{display.length > 10 ? 'value-sm' : display.length > 7 ? 'value-md' : ''}}">{{display}}</text>
+  </view>
+
+  <view class="keys">
+    <view class="key fn" hover-class="fn-hover" bindtap="onClear">AC</view>
+    <view class="key fn" hover-class="fn-hover" bindtap="onBackspace">⌫</view>
+    <view class="key fn" hover-class="fn-hover" bindtap="onPercent">%</view>
+    <view class="key op {{activeOp === '/' ? 'op-active' : ''}}" hover-class="op-hover" data-op="/" bindtap="onOperator">÷</view>
+
+    <view class="key" hover-class="key-hover" data-digit="7" bindtap="onDigit">7</view>
+    <view class="key" hover-class="key-hover" data-digit="8" bindtap="onDigit">8</view>
+    <view class="key" hover-class="key-hover" data-digit="9" bindtap="onDigit">9</view>
+    <view class="key op {{activeOp === '*' ? 'op-active' : ''}}" hover-class="op-hover" data-op="*" bindtap="onOperator">×</view>
+
+    <view class="key" hover-class="key-hover" data-digit="4" bindtap="onDigit">4</view>
+    <view class="key" hover-class="key-hover" data-digit="5" bindtap="onDigit">5</view>
+    <view class="key" hover-class="key-hover" data-digit="6" bindtap="onDigit">6</view>
+    <view class="key op {{activeOp === '-' ? 'op-active' : ''}}" hover-class="op-hover" data-op="-" bindtap="onOperator">−</view>
+
+    <view class="key" hover-class="key-hover" data-digit="1" bindtap="onDigit">1</view>
+    <view class="key" hover-class="key-hover" data-digit="2" bindtap="onDigit">2</view>
+    <view class="key" hover-class="key-hover" data-digit="3" bindtap="onDigit">3</view>
+    <view class="key op {{activeOp === '+' ? 'op-active' : ''}}" hover-class="op-hover" data-op="+" bindtap="onOperator">+</view>
+
+    <view class="key" hover-class="key-hover" bindtap="onSign">±</view>
+    <view class="key" hover-class="key-hover" data-digit="0" bindtap="onDigit">0</view>
+    <view class="key" hover-class="key-hover" data-digit="." bindtap="onDigit">.</view>
+    <view class="key eq" hover-class="eq-hover" bindtap="onEqual">=</view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+.page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* 头像区域 */
+.avatar-area {
+  background-color: #3a4861;
+  width: 100%;
+  padding: 40rpx 0 48rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 252rpx;
+  height: 252rpx;
+  border-radius: 50%;
+  border: 6rpx solid #777f92;
+}
+
+/* 详细信息区域 */
+.info-item {
+  height: 96rpx;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  padding: 0 40rpx;
+  font-size: 34rpx;
+  color: #333333;
+}

@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="bulb-wrap">
+    <view class="bulb {{isOn ? 'on level-' + brightness : 'off'}}">
+      <text class="bulb-icon">{{isOn ? '💡' : '🌙'}}</text>
+      <text class="bulb-text">{{isOn ? '亮度 ' + brightness + '/5' : '已关闭'}}</text>
+    </view>
+  </view>
+
+  <view class="controls">
+    <view class="dim-btn" hover-class="dim-btn-hover" bindtap="onDim">亮度 -</view>
+    <view class="switch-btn" hover-class="switch-btn-hover" bindtap="onToggle">{{isOn ? '关灯' : '开灯'}}</view>
+    <view class="dim-btn" hover-class="dim-btn-hover" bindtap="onBrighten">亮度 +</view>
+  </view>
+
+  <view class="toast" wx:if="{{showTip}}">{{tip}}</view>
+</view>

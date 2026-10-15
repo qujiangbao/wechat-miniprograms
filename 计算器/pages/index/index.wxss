@@ -1,0 +1,100 @@
+.page {
+  min-height: 100vh;
+  background-color: #1c1c1e;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 24rpx 40rpx 32rpx;
+  min-height: 280rpx;
+}
+
+.formula {
+  width: 100%;
+  min-height: 44rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #8e8e93;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.value {
+  width: 100%;
+  margin-top: 8rpx;
+  font-size: 108rpx;
+  line-height: 120rpx;
+  font-weight: 300;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.value-md {
+  font-size: 80rpx;
+  line-height: 96rpx;
+}
+
+.value-sm {
+  font-size: 56rpx;
+  line-height: 72rpx;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18rpx;
+  padding: 12rpx 20rpx 36rpx;
+}
+
+.key {
+  height: 148rpx;
+  border-radius: 40rpx;
+  background-color: #2c2c2e;
+  color: #ffffff;
+  font-size: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-hover {
+  background-color: #3a3a3c;
+}
+
+.fn {
+  background-color: #3a3a3c;
+  color: #f2f2f7;
+  font-size: 40rpx;
+}
+
+.fn-hover {
+  background-color: #545458;
+}
+
+.op,
+.eq {
+  background-color: #ff9f0a;
+  color: #ffffff;
+  font-size: 60rpx;
+}
+
+.op-hover,
+.eq-hover {
+  background-color: #ffb340;
+}
+
+.op-active {
+  background-color: #ffffff;
+  color: #ff9f0a;
+}

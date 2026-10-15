@@ -1,0 +1,75 @@
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.content {
+  width: 84vw;
+  position: fixed;
+  left: 8vw;
+  bottom: calc(56px + env(safe-area-inset-bottom));
+  z-index: 1;
+}
+
+.form-title {
+  text-align: center;
+  color: #ff4c91;
+  font-size: 40rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  margin-bottom: 1.4vh;
+}
+
+.content .input {
+  font-size: 32rpx;
+  border: 1rpx solid #ff4c91;
+  border-radius: 10rpx;
+  padding: 1.1vh 32rpx;
+  margin-bottom: 1.2vh;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.content .phcolor {
+  color: #ff9ec0;
+}
+
+.content .radio,
+.content .check {
+  font-size: 30rpx;
+  margin-bottom: 1.2vh;
+  color: #ff4c91;
+}
+
+.content .radio {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radio radio-group label,
+.check checkbox-group label {
+  margin-left: 24rpx;
+}
+
+.check checkbox-group {
+  margin-top: 1.2vh;
+}
+
+.check checkbox-group label:first-child {
+  margin-left: 0;
+}
+
+.content button {
+  font-size: 32rpx;
+  background: #ff4c91;
+  color: #ffffff;
+  border-radius: 10rpx;
+}
+
+.content button::after {
+  border: none;
+}

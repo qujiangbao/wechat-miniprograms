@@ -1,0 +1,15 @@
+<view class="page">
+  <!-- 上半部分：头像区域 -->
+  <view class="avatar-area">
+    <image class="avatar" src="/images/avatar.png" mode="aspectFill"></image>
+  </view>
+
+  <!-- 下半部分：详细信息区域 -->
+  <view class="info-area">
+    <view class="info-item">姓名：陈</view>
+    <view class="info-item">年龄：20</view>
+    <view class="info-item">性别：男</view>
+    <view class="info-item">特长：打机</view>
+    <view class="info-item">爱好：洲</view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<image class="bg" src="/images/bj_2.png" mode="aspectFill"></image>
+
+<form bindsubmit="onSubmit">
+  <view class="content">
+    <view class="form-title">宾客信息</view>
+
+    <view class="input">
+      <input name="name" placeholder="输入您的姓名" placeholder-class="phcolor" />
+    </view>
+
+    <view class="input">
+      <input name="phone" type="number" maxlength="11" placeholder="输入您的手机号码" placeholder-class="phcolor" />
+    </view>
+
+    <view class="radio">
+      <text>请选择您的性别：</text>
+      <radio-group name="gender">
+        <label><radio value="男" color="#ff4c91" />男</label>
+        <label><radio value="女" color="#ff4c91" />女</label>
+      </radio-group>
+    </view>
+
+    <view class="check">
+      <text>请选择您需要的点心：</text>
+      <checkbox-group name="dessert">
+        <label><checkbox value="蛋糕" color="#ff4c91" />蛋糕</label>
+        <label><checkbox value="甜甜圈" color="#ff4c91" />甜甜圈</label>
+        <label><checkbox value="巧克力" color="#ff4c91" />巧克力</label>
+        <label><checkbox value="蛋挞" color="#ff4c91" />蛋挞</label>
+      </checkbox-group>
+    </view>
+
+    <button form-type="submit">提交</button>
+  </view>
+</form>

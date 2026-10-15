@@ -1,0 +1,32 @@
+<view class="page">
+  <!-- 轮播图：自动播放、循环、指示点 -->
+  <swiper
+    class="banner"
+    indicator-dots="{{true}}"
+    indicator-color="rgba(255,255,255,0.6)"
+    indicator-active-color="#ffffff"
+    autoplay="{{true}}"
+    interval="{{3000}}"
+    duration="{{500}}"
+    circular="{{true}}"
+    bindchange="onSwiperChange"
+  >
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image class="banner-img" src="{{item.src}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 九宫格导航 -->
+  <view class="nav">
+    <view
+      class="nav-item"
+      wx:for="{{navs}}"
+      wx:key="name"
+      data-name="{{item.name}}"
+      bindtap="onNavTap"
+    >
+      <image class="nav-icon" src="{{item.icon}}" mode="aspectFit"></image>
+      <text class="nav-name">{{item.name}}</text>
+    </view>
+  </view>
+</view>
