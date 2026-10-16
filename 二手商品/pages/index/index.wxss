@@ -1,0 +1,134 @@
+.page {
+  min-height: 100vh;
+  background-color: #f5f6f8;
+  box-sizing: border-box;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 24rpx 8rpx;
+}
+
+.manage-btn {
+  width: 196rpx;
+  height: 64rpx;
+  margin: 0;
+  padding: 0;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #07c160;
+  background-color: #ffffff;
+  border-radius: 12rpx;
+}
+
+.manage-btn::after {
+  border: none;
+}
+
+.refresh-btn {
+  width: 196rpx;
+  height: 64rpx;
+  margin: 0;
+  padding: 0;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  background-color: #07c160;
+  border-radius: 12rpx;
+}
+
+.refresh-btn::after {
+  border: none;
+}
+
+.refresh-btn[disabled] {
+  color: #ffffff !important;
+  background-color: #b7e4c7 !important;
+}
+
+.empty {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 32rpx;
+}
+
+.goods-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin: 20rpx 24rpx;
+  padding: 24rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.goods-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 16rpx;
+  background-color: #f7f8fa;
+  flex-shrink: 0;
+}
+
+.goods-info {
+  flex: 1;
+  min-width: 0;
+  margin-left: 24rpx;
+  padding: 8rpx 88rpx 8rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-name {
+  font-size: 32rpx;
+  color: #222222;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods-price {
+  font-size: 36rpx;
+  color: #e64340;
+  font-weight: 700;
+}
+
+.badge {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  z-index: 1;
+  padding: 6rpx 16rpx;
+  background-color: #f5c400;
+  color: #ffffff;
+  font-size: 22rpx;
+  line-height: 1.4;
+  border-radius: 8rpx;
+}
+
+.sold-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.sold-text {
+  position: absolute;
+  top: 24rpx;
+  right: 24rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+}

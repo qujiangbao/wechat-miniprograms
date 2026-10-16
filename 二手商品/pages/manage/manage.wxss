@@ -1,0 +1,110 @@
+.page {
+  min-height: 100vh;
+  background-color: #f5f6f8;
+  box-sizing: border-box;
+}
+
+.tip {
+  padding: 24rpx 32rpx 8rpx;
+  color: #888888;
+  font-size: 26rpx;
+}
+
+.empty,
+.retry {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 32rpx;
+}
+
+.retry-btn {
+  width: 220rpx;
+  height: 72rpx;
+  margin: 0;
+  padding: 0;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  background-color: #07c160;
+  border-radius: 12rpx;
+}
+
+.retry-btn::after {
+  border: none;
+}
+
+.goods-item {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 24rpx;
+  padding: 24rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+}
+
+.goods-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 16rpx;
+  background-color: #f7f8fa;
+  flex-shrink: 0;
+}
+
+.goods-info {
+  flex: 1;
+  min-width: 0;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140rpx;
+  padding: 4rpx 0;
+}
+
+.goods-name {
+  font-size: 32rpx;
+  color: #222222;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods-price {
+  font-size: 34rpx;
+  color: #e64340;
+  font-weight: 700;
+}
+
+.goods-status {
+  font-size: 24rpx;
+}
+
+.is-sale {
+  color: #07c160;
+}
+
+.is-sold {
+  color: #999999;
+}
+
+.restock-btn {
+  width: 140rpx;
+  height: 60rpx;
+  margin: 0 0 0 16rpx;
+  padding: 0;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+  background-color: #07c160;
+  border-radius: 10rpx;
+  flex-shrink: 0;
+}
+
+.restock-btn::after {
+  border: none;
+}

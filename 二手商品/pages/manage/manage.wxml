@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="tip">已售出的商品可以补货，补货后重新上架</view>
+
+  <view class="empty" wx:if="{{loaded && goodsList.length === 0}}">暂无二手商品</view>
+
+  <view class="retry" wx:if="{{!loaded && !loading}}">
+    <button class="retry-btn" bindtap="loadGoods">重新加载</button>
+  </view>
+
+  <view class="list" wx:if="{{goodsList.length > 0}}">
+    <view class="goods-item" wx:for="{{goodsList}}" wx:key="id">
+      <image class="goods-img" src="{{item.image}}" mode="aspectFit"></image>
+      <view class="goods-info">
+        <text class="goods-name">{{item.name}}</text>
+        <text class="goods-price">¥{{item.price}}</text>
+        <text class="goods-status {{item.status === 'sold' ? 'is-sold' : 'is-sale'}}">
+          {{item.status === 'sold' ? '已售出' : '在售'}}
+        </text>
+      </view>
+      <button
+        wx:if="{{item.status === 'sold'}}"
+        class="restock-btn"
+        data-id="{{item.id}}"
+        data-name="{{item.name}}"
+        catchtap="onRestock"
+      >补货</button>
+    </view>
+  </view>
+</view>
