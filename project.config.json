@@ -21,6 +21,18 @@
       {
         "type": "folder",
         "value": "二手商品"
+      },
+      {
+        "type": "folder",
+        "value": "调查问卷"
+      },
+      {
+        "type": "folder",
+        "value": "校园音乐"
+      },
+      {
+        "type": "folder",
+        "value": "美食列表"
       }
     ],
     "include": []

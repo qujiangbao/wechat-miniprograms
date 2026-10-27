@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>美食列表代码</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+      padding: 18px 22px 28px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      color: #9cdcfe;
+      font-size: 16px;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    pre {
+      background: #252526;
+      border: 1px solid #3c3c3c;
+      padding: 14px 16px;
+      overflow: auto;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .kw { color: #569cd6; }
+    .str { color: #ce9178; }
+    .cm { color: #6a9955; }
+    .tag { color: #569cd6; }
+    .attr { color: #9cdcfe; }
+  </style>
+</head>
+<body>
+  <h2>pages/shoplist/shoplist.wxml</h2>
+  <pre id="wxml"></pre>
+  <h2>pages/shoplist/shoplist.js</h2>
+  <pre id="js"></pre>
+  <h2>utils/tools.wxs</h2>
+  <pre id="wxs"></pre>
+  <script>
+    document.getElementById("wxml").textContent = `<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+
+<view class="page">
+  <view class="shop-item" wx:for="{{shopList}}" wx:key="id">
+    <view class="thumb">
+      <image src="{{item.image}}" mode="aspectFill" lazy-load="{{true}}"></image>
+    </view>
+    <view class="info">
+      <text class="shop-title">{{item.name}}</text>
+      <text>电话：{{tools.splitPhone(item.phone)}}</text>
+      <text>地址：{{item.address}}</text>
+      <text>营业时间：{{item.businessHours}}</text>
+    </view>
+  </view>
+</view>`;
+    document.getElementById("js").textContent = `Page({
+  isLoading: false,
+  data: { shopList: [], page: 1, pageSize: 10, total: 0 },
+  getShopList(callback) {
+    this.isLoading = true
+    wx.showLoading({ title: "数据加载中..." })
+    wx.request({
+      url: "http://127.0.0.1:3000/data",
+      method: "GET",
+      data: { page: this.data.page, pageSize: this.data.pageSize },
+      success: (res) => {
+        const total = Number(res.header["X-Total-Count"] || 0)
+        this.setData({
+          shopList: this.data.shopList.concat(res.data),
+          total
+        })
+      },
+      complete: () => {
+        wx.hideLoading()
+        this.isLoading = false
+        callback && callback()
+      }
+    })
+  },
+  onLoad() { this.getShopList() },
+  onPullDownRefresh() {
+    this.setData({ shopList: [], page: 1, total: 0 })
+    this.getShopList(() => wx.stopPullDownRefresh())
+  },
+  onReachBottom() {
+    if (this.data.page * this.data.pageSize >= this.data.total) {
+      return wx.showToast({ title: "数据加载完毕！", icon: "none" })
+    }
+    this.setData({ page: this.data.page + 1 })
+    this.getShopList()
+  }
+})`;
+    document.getElementById("wxs").textContent = `function splitPhone(str) {
+  if (!str || str.length !== 11) {
+    return str || ''
+  }
+  var arr = str.split('')
+  arr.splice(3, 0, '-')
+  arr.splice(8, 0, '-')
+  return arr.join('')
+}
+module.exports = {
+  splitPhone: splitPhone
+}`;
+  </script>
+</body>
+</html>

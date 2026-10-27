@@ -1,0 +1,97 @@
+<view class="page">
+  <view class="header">
+    <view class="header-title">校园音乐推荐</view>
+    <view class="header-sub">发现好音乐，享受校园时光</view>
+
+    <view class="now-card">
+      <view class="now-main">
+        <view class="note-box">♪</view>
+        <view class="now-info">
+          <view class="now-name">{{currentSong.name}}</view>
+          <view class="now-artist">{{currentSong.artist}}</view>
+          <view class="now-tag">{{playing ? '播放中' : '已暂停'}}</view>
+        </view>
+      </view>
+
+      <view class="time-row">
+        <text class="time-text">{{currentTimeText}}</text>
+        <view class="progress">
+          <view class="progress-bar" style="width: {{progress}}%;"></view>
+        </view>
+        <text class="time-text">{{durationText}}</text>
+      </view>
+
+      <view class="controls">
+        <view class="ctrl" bindtap="onPrev">
+          <view class="ctrl-circle">
+            <view class="icon-skip icon-prev"></view>
+          </view>
+          <text class="ctrl-label">上一首</text>
+        </view>
+        <view class="ctrl" bindtap="onTogglePlay">
+          <view class="ctrl-circle ctrl-main">
+            <view class="{{playing ? 'icon-pause' : 'icon-play'}}"></view>
+          </view>
+          <text class="ctrl-label">{{playing ? '暂停' : '播放'}}</text>
+        </view>
+        <view class="ctrl" bindtap="onNext">
+          <view class="ctrl-circle">
+            <view class="icon-skip"></view>
+          </view>
+          <text class="ctrl-label">下一首</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="panel-head">
+      <text class="panel-title">推荐歌曲</text>
+      <text class="panel-count">共 {{songs.length}} 首</text>
+    </view>
+
+    <scroll-view class="song-scroll" scroll-y enhanced show-scrollbar="{{true}}">
+      <view
+        class="song-item {{index === currentIndex ? 'active' : ''}}"
+        wx:for="{{songs}}"
+        wx:key="id"
+        data-index="{{index}}"
+        bindtap="onSelectSong"
+      >
+        <text class="song-index">{{index + 1}}</text>
+        <view class="song-meta">
+          <text class="song-name">{{item.name}}</text>
+          <text class="song-artist">{{item.artist}}</text>
+        </view>
+        <text class="song-btn {{index === currentIndex ? 'song-btn-on' : ''}}">
+          {{index === currentIndex ? '已选中' : '选择'}}
+        </text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="panel volume-panel">
+    <view class="panel-head">
+      <text class="panel-title">音量调节</text>
+      <text class="volume-value">{{volume}}%</text>
+    </view>
+
+    <slider
+      class="volume-slider"
+      min="0"
+      max="100"
+      step="5"
+      value="{{volume}}"
+      activeColor="#3b82f6"
+      backgroundColor="#e6ebf2"
+      block-size="20"
+      bindchanging="onVolumeChanging"
+      bindchange="onVolumeChange"
+    />
+
+    <view class="volume-foot">
+      <text>静音</text>
+      <text class="volume-tip {{volume === 0 ? 'mute' : ''}}">{{volumeTip}}</text>
+    </view>
+  </view>
+</view>

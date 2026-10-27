@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "美食",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 200,
+  "backgroundColor": "#d8b5b5",
+  "backgroundTextStyle": "dark"
+}
